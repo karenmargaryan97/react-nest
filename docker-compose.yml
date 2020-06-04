@@ -1,0 +1,49 @@
+version: "3.3"
+
+services:
+  postgres:
+    env_file:
+      - api/.env
+    image: "postgres:alpine"
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - /usr/potgres/nest:/var/lib/postgresql/data
+    networks:
+      - test-net
+
+  server:
+    env_file:
+      - api/.env
+    restart: always
+    depends_on:
+      - postgres
+    build: api
+    volumes:
+      - /api/node_modules
+      - ./api:/api
+    ports:
+      - "8080:8080"
+    networks:
+      - test-net
+
+  client:
+    stdin_open: true
+    tty: true
+    env_file:
+      - client/.env
+    depends_on:
+      - server
+    build: client
+    volumes:
+      - /client/node_modules
+      - /client/public
+      - ./client:/client
+    ports:
+      - "3000:3000"
+    networks:
+      - test-net
+
+networks:
+  test-net:
