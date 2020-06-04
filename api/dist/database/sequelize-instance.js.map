@@ -1,0 +1,1 @@
+{"version":3,"file":"sequelize-instance.js","sourceRoot":"","sources":["../../src/database/sequelize-instance.ts"],"names":[],"mappings":";;;AAAA,+DAAiD;AACjD,6DAAmD;AACnD,iDAA4C;AAE/B,QAAA,oBAAoB,GAAG,GAAG,EAAE;IACvC,MAAM,SAAS,GAAG,IAAI,gCAAS,CAAC,iBAAM,CAAC,CAAC;IACxC,SAAS,CAAC,SAAS,CAAC,CAAC,kBAAI,CAAC,CAAC,CAAC;IAE5B,OAAO,SAAS,CAAC;AACnB,CAAC,CAAC"}
